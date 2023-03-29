@@ -47,12 +47,12 @@ public class TodoH2Service implements TodoRepository{
         
     }
     @Override
-    public Todo addTodo(Todo todo) {
-        db.update("insert into TODOLIST(todo, status, priority) values (?, ?, ?)", todo.getTodo(), todo.getStatus(), todo.getPriority());
+   public Todo addTodo(Todo todo) { //updated code
+        db.update("insert into TODOLIST(todo,  priority, status) values (?, ?, ?)", todo.getTodo(),todo.getPriority(), todo.getStatus());
 
-            Todo savedTodo = db.queryForObject("select * from TODOLIST where todo = ? and status = ? and priority =?",
-                                                new TodoRowMapper(), todo.getTodo(), todo.getStatus(),todo.getPriority());
 
+            Todo savedTodo = db.queryForObject("select * from TODOLIST where todo = ?",
+                                                new TodoRowMapper(), todo.getTodo());
 
             return savedTodo;
     }
