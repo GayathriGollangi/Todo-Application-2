@@ -51,8 +51,8 @@ public class TodoH2Service implements TodoRepository{
         db.update("insert into TODOLIST(todo,  priority, status) values (?, ?, ?)", todo.getTodo(),todo.getPriority(), todo.getStatus());
 
 
-            Todo savedTodo = db.queryForObject("select * from TODOLIST where todo = ?",
-                                                new TodoRowMapper(), todo.getTodo());
+            Todo savedTodo = db.queryForObject("select * from TODOLIST where todo = ? and priority =? and status =?",
+                                                new TodoRowMapper(), todo.getTodo(),todo.getPriority(),todo.getStatus());
 
             return savedTodo;
     }

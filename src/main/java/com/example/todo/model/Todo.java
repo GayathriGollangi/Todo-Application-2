@@ -14,36 +14,37 @@ public class Todo{
         this.priority = priority;
     }
 
-    public int getId() {
-		return id;
-	}
-
 	public void setId(int id) {
 		this.id = id;
 	}
-	public String getTodo() {
-		return todo;
+    public int getId() {
+		return id;
 	}
 
 	public void setTodo(String todo) {
 		this.todo = todo;
 	}
+	public String getTodo() {
+		return todo;
+	}
 
+	
+	public void setStatus(String status) {
+		this.status = status;
+	}
 	public String getStatus() {
 		return status;
 	}
 
-	public void setStatus(String status) {
-		this.status = status;
+	
+	public void setPriority(String priority) {
+		this.priority = priority;
 	}
-
 	public String getPriority() {
 		return priority;
 	}
 
-	public void setPriority(String priority) {
-		this.priority = priority;
-	}
+	
 
 	    
 }
